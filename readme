@@ -1,0 +1,75 @@
+🔍 Packet Sniffer (HTTPS) using Python + Scapy
+This is a lightweight network packet sniffer built with Python and Scapy. It captures live network packets, logs source/destination IPs and protocol numbers, and filters only HTTPS (port 443) traffic. It also generates an HTML report from the captured logs.
+
+🚀 Features
+✅ Live packet sniffing using Scapy
+
+✅ Filters only HTTPS traffic (port 443)
+
+✅ Logs IP addresses and protocol numbers
+
+✅ Saves captured logs to packet_log.txt
+
+✅ Automatically generates packet_report.html
+
+📂 Project Files
+File	Description
+packet_sniffer.py	Main script to capture and log packets
+packet_log.txt	Text log of captured packets (auto-generated)
+packet_report.html	HTML report of captured packets (auto-generated)
+README.md	Project documentation
+
+⚙️ Requirements
+Python 3.x
+
+Scapy Python library
+
+Install Scapy with:
+
+bash
+Copy
+Edit
+pip install scapy
+🔧 Configuration
+Inside packet_sniffer.py:
+
+python
+Copy
+Edit
+PORT_FILTER = "tcp port 443"  # Only HTTPS traffic
+PACKET_COUNT = 20             # Change to 0 for infinite capture
+🧪 How to Run
+⚠️ Admin/root permissions required to sniff packets
+
+Linux/macOS:
+
+bash
+Copy
+Edit
+sudo python3 packet_sniffer.py
+Windows:
+
+Open Command Prompt as Administrator
+
+Run the script using python packet_sniffer.py
+
+📌 Sample Log Output
+yaml
+Copy
+Edit
+2025-07-19 09:32:10 | 192.168.1.5 → 172.217.160.110 | Protocol: 6
+2025-07-19 09:32:12 | 192.168.1.5 → 13.107.42.12     | Protocol: 6
+🌐 HTML Report
+After execution, open packet_report.html in your browser to view a formatted log.
+
+💡 Want to Capture More?
+Change the filter for other ports:
+
+python
+Copy
+Edit
+PORT_FILTER = "tcp port 80"           # HTTP only
+PORT_FILTER = "tcp port 80 or 443"    # HTTP & HTTPS
+PORT_FILTER = "ip"                    # All IP traffic
+📜 License
+This project is open-source and intended for educational and research purposes only. Do not use it to sniff traffic without permission.
